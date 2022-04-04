@@ -39,8 +39,7 @@ bat 'mvn sonar:sonar -Dsonar.login=857993ae03a96b3c557f21977fa10bc2a83e439d'
 }
 stage('nexus') {
 steps {
-
-nexusArtifactUploader artifacts: [[artifactId: 'pom.my-app', classifier: '', file: 'my-app-1.0-SNAPSHOT.jar', type: 'jar']], credentialsId: 'NEXUS_CRED', groupId: 'pom.com.mycompany.app', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-central-repository', version: 'pom.1.0-SNAPSHOT'
+nexusArtifactUploader artifacts: [[artifactId: 'pom.my-app', classifier: '', file: 'jar', type: 'jar']], credentialsId: 'NEXUS_CRED', groupId: 'pom.com.mycompany.app', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-central-repository', version: 'pom.1.0-SNAPSHOT'
 }
 }
 }
